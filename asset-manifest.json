@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ramen_munoz/static/css/main.19162919.chunk.css",
+    "main.js": "/ramen_munoz/static/js/main.ca0d4f19.chunk.js",
+    "main.js.map": "/ramen_munoz/static/js/main.ca0d4f19.chunk.js.map",
+    "runtime-main.js": "/ramen_munoz/static/js/runtime-main.2e60cbc2.js",
+    "runtime-main.js.map": "/ramen_munoz/static/js/runtime-main.2e60cbc2.js.map",
+    "static/js/2.b4a560e4.chunk.js": "/ramen_munoz/static/js/2.b4a560e4.chunk.js",
+    "static/js/2.b4a560e4.chunk.js.map": "/ramen_munoz/static/js/2.b4a560e4.chunk.js.map",
+    "static/js/3.09b2abd1.chunk.js": "/ramen_munoz/static/js/3.09b2abd1.chunk.js",
+    "static/js/3.09b2abd1.chunk.js.map": "/ramen_munoz/static/js/3.09b2abd1.chunk.js.map",
+    "index.html": "/ramen_munoz/index.html",
+    "static/css/main.19162919.chunk.css.map": "/ramen_munoz/static/css/main.19162919.chunk.css.map",
+    "static/js/2.b4a560e4.chunk.js.LICENSE.txt": "/ramen_munoz/static/js/2.b4a560e4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e60cbc2.js",
+    "static/js/2.b4a560e4.chunk.js",
+    "static/css/main.19162919.chunk.css",
+    "static/js/main.ca0d4f19.chunk.js"
+  ]
+}
