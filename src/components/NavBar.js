@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import CartWidget from './CartWidget';
 
 const minHeight = "1024px";
 
@@ -38,6 +39,8 @@ const Login = styled.a`
     margin: auto;
     padding: 4px;
     width: 20%;
+   
+    border-right: 2px solid #E9EEF4;
 
     font-size: 14px;
     color: hsla(216, 100%, 49.01960784313725%, 1);
@@ -78,8 +81,8 @@ function NavBar() {
                 <Titulo> Ramen Rantaro </Titulo>
                 <Link href='Inicio'>Inicio</Link>
                 <Link href='Productos'>Productos</Link>
-                <Link href='Delivery'>Delivery</Link>
                 <Login href='Login'>Login</Login>
+                <CartWidget Quantity={4} ></CartWidget>
             </NavDiv>
             <LineSeparator/>
         </React.Fragment>
