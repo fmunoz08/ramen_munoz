@@ -5,11 +5,11 @@ const Title = styled.h1`
     text-align: center;
 `;
 
-const ItemListContainer = ({}) => {
+const ItemListContainer = ({greeting}) => {
 
 
     return(
-        <Title>ITEM LIST CONTAINER WIP</Title>
+        <Title>{greeting}</Title>
     );
 }
 
