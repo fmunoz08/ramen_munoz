@@ -60,7 +60,7 @@ function ItemCount ({ stock, initial, onAdd}) {
                 <Numero> {number} </Numero>
                 <Boton onClick={() => AddQuantity()}> + </Boton>
             </DivControl>
-            <LargeBoton>Agregar al carrito</LargeBoton>
+            <LargeBoton onClick={() => onAdd(number)}>Agregar al carrito</LargeBoton>
 
             
             

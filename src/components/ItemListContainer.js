@@ -15,13 +15,13 @@ align-items: center;
 `;
 
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({greeting, addcart}) => {
 
 
     return(
         <Background>
         <Title>{greeting}</Title>
-        <ItemCount stock={5} initial={1}/>
+        <ItemCount stock={5} initial={1} onAdd={(number) => addcart(number) } />
         </Background>
     );
 }

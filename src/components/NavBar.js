@@ -72,7 +72,7 @@ const Titulo = styled.p`
     }
 
 `;
-function NavBar() {
+function NavBar({number}) {
 
 
     return(
@@ -82,7 +82,7 @@ function NavBar() {
                 <Link href='Inicio'>Inicio</Link>
                 <Link href='Productos'>Productos</Link>
                 <Login href='Login'>Login</Login>
-                <CartWidget Quantity={4} ></CartWidget>
+                <CartWidget Quantity={number} ></CartWidget>
             </NavDiv>
             <LineSeparator/>
         </React.Fragment>
