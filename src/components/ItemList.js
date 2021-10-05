@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
     display: flex;
-    flex-direction: row;
+
 `;
 function ItemList({Items}) {
 
@@ -13,7 +13,7 @@ function ItemList({Items}) {
         <Wrapper>
         {
             Items.map((item,index) => 
-                <Item Data={item} id={index}></Item>
+                <Item key={index} Data={item} id={index}></Item>
                 )
         }
         </Wrapper>

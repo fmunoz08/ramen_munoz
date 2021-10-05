@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Card = styled.div`
     border: 2px solid black;
     background: white;
+    margin: 4px;
 `;
 
 const Bar = styled.div`

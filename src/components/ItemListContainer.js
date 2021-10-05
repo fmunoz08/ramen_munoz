@@ -23,27 +23,22 @@ function ItemListContainer  ({greeting, addcart}) {
     const [items,setItems] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const DATA = { productos: [
-        {id:1,title:"ramen",description:"saludos",price:1000,stock:5,pictureUrl:"https://www.elmundoeats.com/wp-content/uploads/2021/02/FP-Quick-30-minutes-chicken-ramen.jpg"},
-        {id:2,title:"ramen",description:"saludos",price:1000,stock:5,pictureUrl:"https://www.elmundoeats.com/wp-content/uploads/2021/02/FP-Quick-30-minutes-chicken-ramen.jpg"},
-        {id:3,title:"ramen",description:"saludos",price:1000,stock:5,pictureUrl:"https://www.elmundoeats.com/wp-content/uploads/2021/02/FP-Quick-30-minutes-chicken-ramen.jpg"},
-    ]};
-
     
     useEffect( () => {
-        
-        setTimeout(() => {
-            setItems(DATA.productos);
-            setLoading(false);
-        }, 2000);
-    
-        // GetData()
-        //     .then(res => {
-                
-        //     })
-        //     .catch(err => {
-        //         console.log(DATA);
-        //     });
+       
+        GetData()
+            .then(res => {             
+                console.log(res.data);
+                setTimeout(() => {
+                    setItems(res.data.productos);
+                    setLoading(false);
+                }, 2000);
+            })
+            .catch(err => {
+                console.log(err);
+
+
+            });
     }, []);
 
 
