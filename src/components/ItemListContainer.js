@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import ItemCount from "./ItemCount";
+
 import ItemList from "./ItemList";
 
 import {GetData} from "../services/getData";
@@ -28,11 +28,8 @@ function ItemListContainer  ({greeting, addcart}) {
        
         GetData()
             .then(res => {             
-                console.log(res.data);
-                setTimeout(() => {
                     setItems(res.data.productos);
                     setLoading(false);
-                }, 2000);
             })
             .catch(err => {
                 console.log(err);
@@ -52,8 +49,8 @@ function ItemListContainer  ({greeting, addcart}) {
         {
             !loading && 
             <React.Fragment>
-                <ItemList Items={items}/>
-                <ItemCount stock={5} initial={1} onAdd={(number) => addcart(number) } />
+                <ItemList addcart={addcart} Items={items}/>
+                
             </React.Fragment>
         }
         

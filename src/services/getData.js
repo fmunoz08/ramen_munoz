@@ -7,3 +7,9 @@ export const GetData = () => {
         `${url}/getData`
     ));
 }
+
+export const GetProducto = (number) => {
+    return( axios.get(
+        `${url}/getProducto`
+    ));
+}

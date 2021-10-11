@@ -6,14 +6,14 @@ const Wrapper = styled.div`
     display: flex;
 
 `;
-function ItemList({Items}) {
+function ItemList({Items,addcart}) {
 
     return(
         <>
         <Wrapper>
         {
             Items.map((item,index) => 
-                <Item key={index} Data={item} id={index}></Item>
+                <Item addcart={addcart} key={index} Data={item} id={index}></Item>
                 )
         }
         </Wrapper>

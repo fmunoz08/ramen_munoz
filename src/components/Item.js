@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 const Card = styled.div`
     border: 2px solid black;
     background: white;
     margin: 4px;
+    display: flex;
+    flex-direction: column;
 `;
 
 const Bar = styled.div`
@@ -25,30 +28,52 @@ const Imagen = styled.img`
 `;
 
 const Titulo = styled.h1`
+word-wrap: break-word;
 
 `;
 
 const SubTitulo = styled.p`
-
+word-wrap: break-word;
+font-size:12px;
 `;
 
 
-function Item ({ Data, index }) {
+function Item ({ Data, id,addcart }) {
+
+    const [show,setShow] = useState([true])
+
+    function openModal(){
+        setShow(!show);
+        
+    }
+
+    function closeModal(){
+        setShow(!show);
+    }
+
 
     return (
 
         <>
         <Card>
+            {
+                show &&
+            <React.Fragment>
             <Titulo>{Data.title}</Titulo>
             <Bar/>
             <Imagen src={Data.pictureUrl} alt=""/>
+            <div style={{display: "inline-block"}}>
             <SubTitulo>{Data.description}</SubTitulo>
-            <SubTitulo>{Data.price}</SubTitulo>
-
-            <Boton>VER DETALLE DEL PRODUCTO</Boton>
-
+            </div>     
+            <Boton onClick={() => openModal(Number(id))}>VER DETALLE DEL PRODUCTO</Boton>
             <Bar/>
-            <SubTitulo>Stock Disponible: 1</SubTitulo>
+            <SubTitulo>Stock Disponible: {Data.stock}</SubTitulo>
+            </React.Fragment>
+            }
+            {
+                !show && 
+                <ItemDetailContainer addcart={addcart} close={closeModal}/>
+            }
 
 
 

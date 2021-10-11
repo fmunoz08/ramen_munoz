@@ -7,3 +7,12 @@
     - status: 200
       latency: 2000
       file: getdata.json
+
+- request:
+    url: ^/getProducto
+    method: GET
+  
+  response:
+    - status: 200
+      latency: 2000
+      file: getProducto.json
