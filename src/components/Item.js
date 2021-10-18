@@ -8,6 +8,8 @@ const Card = styled.div`
     margin: 4px;
     display: flex;
     flex-direction: column;
+    width: 250px;
+    height: 480px;
 `;
 
 const Bar = styled.div`
@@ -38,26 +40,14 @@ font-size:12px;
 `;
 
 
-function Item ({ Data, id,addcart }) {
-
-    const [show,setShow] = useState([true])
-
-    function openModal(){
-        setShow(!show);
-        
-    }
-
-    function closeModal(){
-        setShow(!show);
-    }
+function Item ({ Data }) {
 
 
     return (
 
         <>
         <Card>
-            {
-                show &&
+            
             <React.Fragment>
             <Titulo>{Data.title}</Titulo>
             <Bar/>
@@ -65,15 +55,11 @@ function Item ({ Data, id,addcart }) {
             <div style={{display: "inline-block"}}>
             <SubTitulo>{Data.description}</SubTitulo>
             </div>     
-            <Boton onClick={() => openModal(Number(id))}>VER DETALLE DEL PRODUCTO</Boton>
+            <Boton>VER DETALLE DEL PRODUCTO</Boton>
             <Bar/>
             <SubTitulo>Stock Disponible: {Data.stock}</SubTitulo>
             </React.Fragment>
-            }
-            {
-                !show && 
-                <ItemDetailContainer addcart={addcart} close={closeModal}/>
-            }
+            
 
 
 

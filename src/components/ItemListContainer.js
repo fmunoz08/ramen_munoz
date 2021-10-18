@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 
 import ItemList from "./ItemList";
@@ -18,25 +19,19 @@ align-items: center;
 
 
 
-function ItemListContainer  ({greeting, addcart}) {
+function ItemListContainer  ({greeting,path, addcart}) {
 
     const [items,setItems] = useState([]);
     const [loading, setLoading] = useState(true);
 
     
     useEffect( () => {
-       
-        GetData()
-            .then(res => {             
-                    setItems(res.data.productos);
-                    setLoading(false);
-            })
-            .catch(err => {
-                console.log(err);
 
-
-            });
-    }, []);
+            axios(`http://localhost:9000/${path}`)
+            .then((json) => {console.log(json.data)
+                setItems(json.data.productos)
+                    setLoading(false)})
+    }, [path]);
 
 
     return(

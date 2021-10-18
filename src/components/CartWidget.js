@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styled from "styled-components";
 
 const Number = styled.h4`
-
+color: white;
 `;
 const Background = styled.div`
     display: flex;
@@ -20,7 +20,7 @@ const CartWidget = ({Quantity}) => {
 
         <React.Fragment>
             <Background>
-            <ShoppingCartIcon/>
+            <ShoppingCartIcon style={{fill:"white"}}/>
             <Number> {Quantity} </Number>
             </Background>
         </React.Fragment>

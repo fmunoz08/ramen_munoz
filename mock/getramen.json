@@ -1,0 +1,5 @@
+{ "productos": [
+    {"id":0,"type":"RAMEN", "title":"Shoyu Ramen","description":"Exquisito ramen con base de Salsa de Soya","price":1000,"stock":1,"pictureUrl":"https://www.elmundoeats.com/wp-content/uploads/2021/02/FP-Quick-30-minutes-chicken-ramen.jpg"},
+    {"id":1,"type":"RAMEN", "title":"Miso Ramen","description":"Exquisito ramen con base de Miso","price":2000,"stock":3,"pictureUrl":"https://www.hola.com/imagenes/cocina/recetas/20191017151958/ramen-pollo-huevo-cebollino-soja/0-734-730/ramen-adobe-m.jpg"},
+    {"id":2,"type":"RAMEN", "title":"Shio Ramen","description":"Exquisito ramen con base de Sal","price":3000,"stock":5,"pictureUrl":"https://www.hola.com/imagenes/cocina/recetas/20200403164830/receta-japonesa-shoyo-ramen/0-807-128/shoyu-ramen-m.jpg"}
+    ]}

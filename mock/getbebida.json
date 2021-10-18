@@ -1,0 +1,4 @@
+{ "productos": [
+    {"id":3,"type":"BEBIDA", "title":"Sprite","description":"Bebida enlatada de 250ml","price":3000,"stock":5,"pictureUrl":"https://m.media-amazon.com/images/I/71Y5MLLmknL._SL1500_.jpg"},
+    {"id":4,"type":"BEBIDA", "title":"Jugo de naranja","description":"Jugo de naranja andina 1L","price":3000,"stock":5,"pictureUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROQbi0cR6S79WvVsWx1ailkZOPm27pdgK-Cw&usqp=CAU"}
+]}

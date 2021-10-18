@@ -9,10 +9,64 @@
       file: getdata.json
 
 - request:
-    url: ^/getProducto
+    url: ^/Ramen
     method: GET
   
   response:
     - status: 200
       latency: 2000
-      file: getProducto.json
+      file: getramen.json
+
+- request:
+    url: ^/Bebidas
+    method: GET
+  
+  response:
+    - status: 200
+      latency: 2000
+      file: getbebida.json
+
+- request:
+    url: ^/0
+    method: GET
+  
+  response:
+    - status: 200
+      latency: 2000
+      file: getProducto0.json
+
+- request:
+    url: ^/1
+    method: GET
+  
+  response:
+    - status: 200
+      latency: 2000
+      file: getProducto1.json
+
+- request:
+    url: ^/2
+    method: GET
+  
+  response:
+    - status: 200
+      latency: 2000
+      file: getProducto2.json
+
+- request:
+    url: ^/3
+    method: GET
+  
+  response:
+    - status: 200
+      latency: 2000
+      file: getProducto3.json
+
+- request:
+    url: ^/4
+    method: GET
+  
+  response:
+    - status: 200
+      latency: 2000
+      file: getProducto4.json

@@ -2,7 +2,11 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import ItemDetailContainer from './components/ItemDetailContainer';
+
 
 function App() {
   const [number, setNumber] = useState(0);
@@ -11,12 +15,22 @@ function App() {
     setNumber(number)
   }
 
+  useEffect(() => {
+    console.log();
+  },[]);
+
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <NavBar number={number}/>
-      <h1> RAMEN RANTARO</h1>
-      <ItemListContainer addcart={(number) => addcart(number)} greeting="ITEM LIST CONTAINER WIP"/>
+      <Switch>
+        <Route path={"/"} exact render={(props) => ( <ItemListContainer path="getData" addcart={addcart}/> )} />
+        <Route path={"/category/:id"} exact render={(props) => ( <ItemListContainer path={window.location.pathname.split("/")[2] } addcart={addcart}/> )} />
+        <Route path={"/item/:id"} render={(props) => ( <ItemDetailContainer addcart={addcart}/> )} />
+      </Switch> 
+      
     </div>
+    </Router>
   );
 }
 

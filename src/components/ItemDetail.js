@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import CloseIcon from '@mui/icons-material/Close';
 import ItemCount from "./ItemCount";
@@ -29,6 +29,7 @@ const Imagen = styled.img`
     width: 240px;
     heigth: 240px;
     margin: 4px;
+    align-self: center;
 `;
 
 const Titulo = styled.h1`
@@ -40,8 +41,11 @@ word-wrap: break-word;
 font-size:12px;
 `;
 
-function ItemDetail ({ Data, id,addcart, close }) {
+function ItemDetail ({ Data,addcart }) {
 
+    useEffect(()=>{
+
+    },[]);
 
 
     return (
@@ -52,7 +56,6 @@ function ItemDetail ({ Data, id,addcart, close }) {
             <React.Fragment>
             <CloseButton>
             <Titulo>{Data.title}</Titulo>
-            <CloseIcon style={ { alignSelf:" center"}} onClick={close}/>
             </CloseButton>
             <Bar/>
             <Imagen src={Data.pictureUrl} alt=""/>

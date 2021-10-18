@@ -1,26 +1,24 @@
+import axios from "axios";
 import React, {useEffect,useState} from "react";
 import { GetProducto } from "../services/getData";
 import ItemDetail from "./ItemDetail";
 
 
 
-function ItemDetailContainer ({number, show, close,addcart}) {
+function ItemDetailContainer ({addcart}) {
 
     const [items,setItems] = useState({});
     const [loading, setLoading] = useState(true);
 
 
     useEffect( () => {
-        GetProducto(number)
-            .then(res => {             
-                    setItems(res.data);
-                    setLoading(false);
+
+        axios(`http://localhost:9000/${window.location.pathname.split("/")[2]}`)
+            .then((json) => {
+                setItems(json.data)
+                setLoading(false)
             })
-            .catch(err => {
-                console.log(err);
 
-
-            });
     }, []);
 
     return (
@@ -31,7 +29,7 @@ function ItemDetailContainer ({number, show, close,addcart}) {
         }
         {
             !loading && 
-        <ItemDetail close={close} addcart={addcart} Data={items}/>
+        <ItemDetail addcart={addcart} Data={items}/>
         }
         </React.Fragment>
     );
