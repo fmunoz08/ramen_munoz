@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const DivControl = styled.div`
     display: flex;
@@ -35,17 +36,17 @@ font-size: 18px;
 margin: 16px;
 `;
 
-function ItemCount ({ stock, initial, onAdd}) {
+function ItemCount({ stock, initial, onAdd, alClick }) {
 
     const [number, setNumber] = useState(initial);
 
-    function AddQuantity(){
+    function AddQuantity() {
         if (number < stock)
             setNumber(number + 1)
 
     }
 
-    function LessQuantity(){
+    function LessQuantity() {
         if (number > 0)
             setNumber(number - 1)
 
@@ -53,16 +54,19 @@ function ItemCount ({ stock, initial, onAdd}) {
 
     return (
         <Background>
-            <p>Lorem Ipsum</p>
             <DivControl>
-                <Boton onClick={() => LessQuantity()}> - </Boton>         
+                <Boton onClick={() => LessQuantity()}> - </Boton>
                 <Numero> {number} </Numero>
+                
                 <Boton onClick={() => AddQuantity()}> + </Boton>
-            </DivControl>
-            <LargeBoton onClick={() => onAdd(number)}>Agregar al carrito</LargeBoton>
 
+            </DivControl>
             
+            <LargeBoton onClick={() => onAdd(number)} onClick={alClick} >Agregar al carrito</LargeBoton>
             
+
+
+
         </Background>
     );
 }

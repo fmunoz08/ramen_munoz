@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
@@ -14,14 +15,20 @@ const Background = styled.div`
 `;
 
 
-const CartWidget = ({Quantity}) => {
+function CartWidget({ Quantity }) {
 
-    return(
+    useEffect(() => {
+        console.log("Holis");
+
+    }, []);
+
+    return (
 
         <React.Fragment>
             <Background>
-            <ShoppingCartIcon style={{fill:"white"}}/>
-            <Number> {Quantity} </Number>
+                <ShoppingCartIcon style={{ fill: "white" }} />
+                <Number> {Quantity} </Number>
+                <p>Pagar</p>
             </Background>
         </React.Fragment>
     );

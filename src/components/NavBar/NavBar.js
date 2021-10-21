@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 import "./NavBar.css";
 
@@ -18,18 +18,20 @@ const LineSeparator = styled.div`
      background: #E9EEF4;
 `;
 
-function NavBar({number}) {
+function NavBar({ number }) {
 
 
-    return(
+    return (
         <React.Fragment>
             <NavDiv>
-                <Link to='/' className="li">Ramen Rantaro</Link>              
+                <Link to='/' className="li">Ramen Rantaro</Link>
                 <Link to='/category/Ramen' className="li">Ramen</Link>
                 <Link to='/category/Bebidas' className="li">Bebidas</Link>
-                <CartWidget Quantity={number} ></CartWidget>
+                <Link to='/cart/'>
+                    <CartWidget Quantity={number} ></CartWidget>
+                </Link>
             </NavDiv>
-            <LineSeparator/>
+            <LineSeparator />
         </React.Fragment>
     );
 }

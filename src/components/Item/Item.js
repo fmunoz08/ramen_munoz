@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import ItemDetailContainer from "./ItemDetailContainer";
+import ItemDetailContainer from "./ItemListContainer";
 
 const Card = styled.div`
     border: 2px solid black;
@@ -40,30 +40,30 @@ font-size:12px;
 `;
 
 
-function Item ({ Data }) {
+function Item({ Data }) {
 
 
     return (
 
         <>
-        <Card>
-            
-            <React.Fragment>
-            <Titulo>{Data.title}</Titulo>
-            <Bar/>
-            <Imagen src={Data.pictureUrl} alt=""/>
-            <div style={{display: "inline-block"}}>
-            <SubTitulo>{Data.description}</SubTitulo>
-            </div>     
-            <Boton>VER DETALLE DEL PRODUCTO</Boton>
-            <Bar/>
-            <SubTitulo>Stock Disponible: {Data.stock}</SubTitulo>
-            </React.Fragment>
-            
+            <Card>
+
+                <React.Fragment>
+                    <Titulo>{Data.title}</Titulo>
+                    <Bar />
+                    <Imagen src={Data.pictureUrl} alt="" />
+                    <div style={{ display: "inline-block" }}>
+                        <SubTitulo>{Data.description}</SubTitulo>
+                    </div>
+                    <Boton>VER DETALLE DEL PRODUCTO</Boton>
+                    <Bar />
+                    <SubTitulo>Stock Disponible: {Data.stock}</SubTitulo>
+                </React.Fragment>
 
 
 
-        </Card>
+
+            </Card>
         </>
     );
 

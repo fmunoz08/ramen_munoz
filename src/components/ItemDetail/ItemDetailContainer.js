@@ -1,17 +1,16 @@
 import axios from "axios";
-import React, {useEffect,useState} from "react";
-import { GetProducto } from "../services/getData";
+import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 
 
 
-function ItemDetailContainer ({addcart}) {
+function ItemDetailContainer({ addcart }) {
 
-    const [items,setItems] = useState({});
+    const [items, setItems] = useState({});
     const [loading, setLoading] = useState(true);
 
 
-    useEffect( () => {
+    useEffect(() => {
 
         axios(`http://localhost:9000/${window.location.pathname.split("/")[2]}`)
             .then((json) => {
@@ -23,14 +22,14 @@ function ItemDetailContainer ({addcart}) {
 
     return (
         <React.Fragment>
-        {
-            loading && 
+            {
+                loading &&
                 <h3>Cargando</h3>
-        }
-        {
-            !loading && 
-        <ItemDetail addcart={addcart} Data={items}/>
-        }
+            }
+            {
+                !loading &&
+                <ItemDetail addcart={addcart} Data={items} />
+            }
         </React.Fragment>
     );
 
