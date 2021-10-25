@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import CloseIcon from '@mui/icons-material/Close';
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const Card = styled.div`
     display: flex;
@@ -41,6 +42,12 @@ word-wrap: break-word;
 font-size:12px;
 `;
 
+const LargeBoton = styled.button`
+color: blue;
+font-size: 18px;
+margin: 16px;
+`;
+
 function ItemDetail({ Data, addcart }) {
 
     const [show, setShow] = useState(true);
@@ -73,6 +80,12 @@ function ItemDetail({ Data, addcart }) {
 
                     {show &&
                         <ItemCount stock={Data.stock} alClick={alClick} initial={1} onAdd={(number) => addcart(number)} />
+                    }
+
+                    {!show && 
+                        <Link to={`/cart`}>
+                        <LargeBoton> Finalizar Compra </LargeBoton>
+                        </Link>
                     }
 
 
