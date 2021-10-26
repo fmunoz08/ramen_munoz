@@ -28,7 +28,7 @@ function ItemDetailContainer({ addcart }) {
             }
             {
                 !loading &&
-                <ItemDetail addcart={addcart} Data={items} />
+                <ItemDetail Data={items} />
             }
         </React.Fragment>
     );

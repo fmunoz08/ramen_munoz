@@ -36,7 +36,7 @@ font-size: 18px;
 margin: 16px;
 `;
 
-function ItemCount({ stock, initial, onAdd, alClick }) {
+function ItemCount({ stock, initial, alClick }) {
 
     const [number, setNumber] = useState(initial);
 
@@ -62,7 +62,7 @@ function ItemCount({ stock, initial, onAdd, alClick }) {
 
             </DivControl>
             
-            <LargeBoton onClick={() => onAdd(number)} onClick={alClick} >Agregar al carrito</LargeBoton>
+            <LargeBoton onClick={() => alClick(number)} >Agregar al carrito</LargeBoton>
             
 
 

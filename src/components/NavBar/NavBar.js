@@ -18,7 +18,9 @@ const LineSeparator = styled.div`
      background: #E9EEF4;
 `;
 
-function NavBar({ number }) {
+function NavBar({  }) {
+
+
 
 
     return (
@@ -28,7 +30,7 @@ function NavBar({ number }) {
                 <Link to='/category/Ramen' className="li">Ramen</Link>
                 <Link to='/category/Bebidas' className="li">Bebidas</Link>
                 <Link to='/cart/'>
-                    <CartWidget Quantity={number} ></CartWidget>
+                    <CartWidget Quantity={0} ></CartWidget>
                 </Link>
             </NavDiv>
             <LineSeparator />

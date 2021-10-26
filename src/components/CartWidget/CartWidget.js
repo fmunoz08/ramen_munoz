@@ -18,7 +18,6 @@ const Background = styled.div`
 function CartWidget({ Quantity }) {
 
     useEffect(() => {
-        console.log("Holis");
 
     }, []);
 

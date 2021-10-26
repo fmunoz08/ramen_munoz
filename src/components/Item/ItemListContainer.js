@@ -45,7 +45,7 @@ function ItemListContainer({ greeting, path, addcart }) {
             {
                 !loading &&
                 <React.Fragment>
-                    <ItemList addcart={addcart} Items={items} />
+                    <ItemList Items={items} />
 
                 </React.Fragment>
             }

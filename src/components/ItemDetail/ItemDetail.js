@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import CloseIcon from '@mui/icons-material/Close';
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../CartContext";
 
 const Card = styled.div`
     display: flex;
@@ -48,17 +49,24 @@ font-size: 18px;
 margin: 16px;
 `;
 
-function ItemDetail({ Data, addcart }) {
+function ItemDetail({ Data }) {
 
     const [show, setShow] = useState(true);
+    const [cart,setCart,addItem,removeItem,clear,isInCart] = useContext(CartContext);
 
+    
     useEffect(() => {
+        console.log(cart);
+    }, [cart]);
 
-    }, []);
-
-    function alClick() {
+    function updateCart (number) {
+        
+        addItem(Data,number);
+        console.log(cart);
         setShow(false)
+
     }
+
 
     return (
 
@@ -79,7 +87,7 @@ function ItemDetail({ Data, addcart }) {
 
 
                     {show &&
-                        <ItemCount stock={Data.stock} alClick={alClick} initial={1} onAdd={(number) => addcart(number)} />
+                        <ItemCount stock={Data.stock} alClick={(number) =>updateCart(number)} initial={1}  />
                     }
 
                     {!show && 
