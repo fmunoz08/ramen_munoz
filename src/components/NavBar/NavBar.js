@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../CartContext';
+import { useContext } from 'react';
 import "./NavBar.css";
 
 const minHeight = "1024px";
@@ -19,9 +21,10 @@ const LineSeparator = styled.div`
 `;
 
 function NavBar({  }) {
+    const [cart, setCart, addItem, removeItem, clear, isInCart] =
+    useContext(CartContext);
 
-
-
+    
 
     return (
         <React.Fragment>
@@ -30,7 +33,7 @@ function NavBar({  }) {
                 <Link to='/category/Ramen' className="li">Ramen</Link>
                 <Link to='/category/Bebidas' className="li">Bebidas</Link>
                 <Link to='/cart/'>
-                    <CartWidget Quantity={0} ></CartWidget>
+                    <CartWidget cart={cart}></CartWidget>
                 </Link>
             </NavDiv>
             <LineSeparator />
