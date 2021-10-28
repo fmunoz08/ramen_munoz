@@ -49,7 +49,7 @@ const LargeBoton = styled.button`
 
 function ItemDetail({ Data }) {
   const [show, setShow] = useState(true);
-  const [cart, setCart, addItem, removeItem, clear, isInCart] =
+  const [cart,setCart,aux,setNumber, addItem,removeItem,clear,isInCart,updateNumber] =
     useContext(CartContext);
 
   useEffect(() => {}, [cart]);
@@ -57,6 +57,7 @@ function ItemDetail({ Data }) {
   function updateCart(number) {
     addItem(Data, number);
     setShow(false);
+    updateNumber();
   }
 
   return (
@@ -74,7 +75,7 @@ function ItemDetail({ Data }) {
             <SubTitulo> ${Data.price}</SubTitulo>
           </Row>
 
-          {show && (
+          {show && !isInCart(Data.id)  && (
             <ItemCount
               stock={Data.stock}
               alClick={(number) => updateCart(number)}
@@ -82,11 +83,14 @@ function ItemDetail({ Data }) {
             />
           )}
 
-          {!show && (
+          
+
+          {
+            isInCart(Data.id) && 
             <Link to={`/cart`}>
               <LargeBoton> Finalizar Compra </LargeBoton>
             </Link>
-          )}
+          }
 
           <Bar />
           <SubTitulo>Stock Disponible: {Data.stock}</SubTitulo>

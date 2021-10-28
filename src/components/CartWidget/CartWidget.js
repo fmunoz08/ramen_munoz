@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect, useContext } from "react";
 
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -14,21 +14,19 @@ const Background = styled.div`
   align-items: center;
 `;
 
-function CartWidget({cart}) {
 
+function CartWidget({ cantidad }) {
 
-    let quantity = 0;
-        cart.map((item) => {
-            quantity = item.quantity + quantity;
-        })
-
-    useEffect(() => {console.log("me actualice"); }, [cart]);
 
     return (
         <React.Fragment>
             <Background>
+
                 <ShoppingCartIcon style={{ fill: "white" }} />
-                <Number> {quantity} </Number>
+
+
+                <Number> {cantidad} </Number>
+
                 <p>Pagar</p>
             </Background>
         </React.Fragment>

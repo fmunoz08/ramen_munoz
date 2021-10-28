@@ -1,7 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { CartContext } from "../../CartContext";
 import ItemCount from "../ItemDetail/ItemCount";
+import CartItem from "./CartItem";
 
 const Box = styled.div`
   width: 50%;
@@ -45,19 +47,15 @@ const Imagen = styled.img`
 `;
 
 function Cart() {
-    const [cart, setCart, addItem, removeItem, clear, isInCart] =
+    const [cart,setCart,aux,setAux, addItem,removeItem,clear,isInCart,updateNumber,replaceItem] =
         useContext(CartContext);
+
 
     let totalAmount = 0;
     cart.map((item) => {
         totalAmount = item.price * item.quantity + totalAmount;
     })
 
-    function BorrarItem(id) {
-
-        removeItem(id);
-
-    }
     return (
         <>
             {/* Lopear este array*/}
@@ -66,29 +64,9 @@ function Cart() {
                 cart.length > 0 &&
 
                 <React.Fragment>
-                    {cart.map((item) => {
+                    {cart.map((item,index) => {
                         return (
-                            <React.Fragment>
-                                <Background>
-                                    <Box>
-                                        <Imagen src={item.image} />
-                                        <div style={{ alignSelf: "center" }}>
-                                            <h3> {item.name}</h3>
-                                            <p> Cantidad : {item.quantity}</p>
-                                            <div style={{border: "solid red 1px", borderRadius:"24px",cursor:"pointer"}} onClick={() => BorrarItem(item.id)}>
-                                                <p > Eliminar del carro</p>
-                                            </div>
-                                        </div>
-                                        <div>
-                                        </div>
-                                    </Box>
-                                    <DetailBox>
-                                        <p> Precio unidad : {item.price}</p>
-                                        <p> Precio Total: {item.price * item.quantity}</p>
-                                    </DetailBox>
-                                </Background>
-
-                            </React.Fragment>)
+                            <CartItem item={item} index={index} actNumber={updateNumber} rep={replaceItem} remItem={(id) => removeItem(id)}/>)
                     })}
                 </React.Fragment>
 
@@ -96,7 +74,13 @@ function Cart() {
 
             {
                 cart.length === 0 &&
-                <p>no tienes items compraaa</p>
+                <React.Fragment>
+
+                    <h2>Tu carrito esta Vacio :( </h2>
+                    <Link to="/">
+                        <button>Llevame al Inicio </button>
+                    </Link>
+                </React.Fragment>
             }
 
             <Background2>
@@ -104,7 +88,7 @@ function Cart() {
                 <DetailBox>
                     <p>Total: </p>
                     <p> $ {totalAmount} </p>
-                    <div style={{border: "solid red 1px", borderRadius:"24px",cursor:"pointer"}} onClick={() => clear()}>
+                    <div style={{ border: "solid red 1px", borderRadius: "24px", cursor: "pointer" }} onClick={() => clear()}>
                         <p> Vaciar carrito</p>
                     </div>
                 </DetailBox>
