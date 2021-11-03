@@ -14,6 +14,7 @@ padding: 20px;
 `;
 function ItemList({ Items, addcart }) {
 
+    console.log(Items);
     return (
         <>
             <Wrapper>

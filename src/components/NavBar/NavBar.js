@@ -29,7 +29,7 @@ function NavBar({  }) {
             <NavDiv>
                 <Link to='/' className="li">Ramen Rantaro</Link>
                 <Link to='/category/Ramen' className="li">Ramen</Link>
-                <Link to='/category/Bebidas' className="li">Bebidas</Link>
+                <Link to='/category/Bebida' className="li">Bebidas</Link>
                 {
                     cart.length > 0 &&
                 <Link to='/cart/'>

@@ -9,8 +9,9 @@ import { CartProvider, CartContext } from './CartContext'
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 
 
+
 function App() {
-  
+
 
 
   useEffect(() => {
@@ -20,10 +21,10 @@ function App() {
     <CartProvider>
       <Router>
         <div className="App">
-        <h1> Ramen Rantaro</h1>
+          <h1> Ramen Rantaro</h1>
           <NavBar />
           <Switch>
-            <Route path={"/"} exact render={(props) => (<ItemListContainer path="getData" />)} />
+            <Route path={"/"} exact render={(props) => (<ItemListContainer path="/" />)} />
             <Route path={"/category/:id"} exact render={(props) => (<ItemListContainer path={window.location.pathname.split("/")[2]} />)} />
             <Route path={"/item/:id"} render={(props) => (<ItemDetailContainer />)} />
             <Route path={"/cart/"} render={(props) => (<Cart />)} />

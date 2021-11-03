@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
+
+import { db } from '../../firebaseConfig';
 
 
 import ItemList from "./ItemList";
+import { collection, getDocs, query, where } from "@firebase/firestore";
 
 const Title = styled.h1`
     text-align: center;
@@ -25,13 +27,18 @@ function ItemListContainer({ greeting, path, addcart }) {
 
 
     useEffect(() => {
-
-        axios(`http://localhost:9000/${path}`)
-            .then((json) => {
-
-                setItems(json.data.productos)
-                setLoading(false)
+        let newItemList = [];
+        const requestData = async () => {
+            const q = path === "/" ? query(collection(db, "productos")) : query(collection(db, "productos"), where('type', '==', path.toUpperCase()));
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((document) => {
+                newItemList.push(document.data())
             })
+            setItems(newItemList);
+            setLoading(false)
+        }
+
+        requestData();
     }, [path]);
 
 
