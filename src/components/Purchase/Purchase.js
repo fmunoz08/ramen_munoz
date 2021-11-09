@@ -38,8 +38,7 @@ function Purchase() {
       } )
       return carro;
   }
-
-  createItem(cart);
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     inputs["items"] = createItem(cart);
