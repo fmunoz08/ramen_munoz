@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import CloseIcon from "@mui/icons-material/Close";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../CartContext";
@@ -82,9 +81,6 @@ function ItemDetail({ Data }) {
               initial={1}
             />
           )}
-
-          
-
           {
             isInCart(Data.id) && 
             <Link to={`/cart`}>

@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-import { useEffect, useContext } from "react";
-
+import React from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { CartContext } from "../../CartContext";
 import styled from "styled-components";
 
 const Number = styled.h4`
@@ -21,12 +18,8 @@ function CartWidget({ cantidad }) {
     return (
         <React.Fragment>
             <Background>
-
                 <ShoppingCartIcon style={{ fill: "white" }} />
-
-
                 <Number> {cantidad} </Number>
-
                 <p>Pagar</p>
             </Background>
         </React.Fragment>

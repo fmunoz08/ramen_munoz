@@ -1,11 +1,10 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { db } from "../../firebaseConfig";
 
 import { collection, getDocs, query, where } from "@firebase/firestore";
 
-function ItemDetailContainer({ addcart }) {
+function ItemDetailContainer( ) {
     const [items, setItems] = useState({});
     const [loading, setLoading] = useState(true);
 

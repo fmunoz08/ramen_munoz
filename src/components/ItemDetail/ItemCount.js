@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const DivControl = styled.div`
     display: flex;
@@ -43,13 +42,10 @@ function ItemCount({ stock, initial, alClick }) {
     function AddQuantity() {
         if (number < stock)
             setNumber(number + 1)
-
     }
-
     function LessQuantity() {
-        if (number > 0)
+        if (number > 1)
             setNumber(number - 1)
-
     }
 
     return (
@@ -57,16 +53,9 @@ function ItemCount({ stock, initial, alClick }) {
             <DivControl>
                 <Boton onClick={() => LessQuantity()}> - </Boton>
                 <Numero> {number} </Numero>
-                
                 <Boton onClick={() => AddQuantity()}> + </Boton>
-
             </DivControl>
-            
             <LargeBoton onClick={() => alClick(number)} >Agregar al carrito</LargeBoton>
-            
-
-
-
         </Background>
     );
 }

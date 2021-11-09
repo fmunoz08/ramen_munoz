@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import ItemDetailContainer from "./ItemListContainer";
 
 const Card = styled.div`
     border: 2px solid black;
@@ -44,10 +43,8 @@ function Item({ Data }) {
 
 
     return (
-
         <>
             <Card>
-
                 <React.Fragment>
                     <Titulo>{Data.title}</Titulo>
                     <Bar />
@@ -59,10 +56,6 @@ function Item({ Data }) {
                     <Bar />
                     <SubTitulo>Stock Disponible: {Data.stock}</SubTitulo>
                 </React.Fragment>
-
-
-
-
             </Card>
         </>
     );
