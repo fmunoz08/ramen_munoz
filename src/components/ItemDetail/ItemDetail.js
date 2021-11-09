@@ -46,7 +46,7 @@ const LargeBoton = styled.button`
   margin: 16px;
 `;
 
-function ItemDetail({ Data }) {
+function ItemDetail({ Data, id }) {
   const [show, setShow] = useState(true);
   const [cart,setCart,aux,setNumber, addItem,removeItem,clear,isInCart,updateNumber] =
     useContext(CartContext);
@@ -54,6 +54,7 @@ function ItemDetail({ Data }) {
   useEffect(() => {}, [cart]);
 
   function updateCart(number) {
+    Data['fireID'] = id;
     addItem(Data, number);
     setShow(false);
     updateNumber();

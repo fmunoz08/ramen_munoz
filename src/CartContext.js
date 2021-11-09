@@ -7,7 +7,7 @@ export const CartProvider = (props) => {
     const [aux, setAux] = useState(0);
 
     const addItem = (item, quantity) => {
-        let aux1 = { id: item.id, name: item.title, price: item.price, quantity: quantity, image: item.pictureUrl, stock: item.stock };
+        let aux1 = { id: item.id, name: item.title, price: item.price, quantity: quantity, image: item.pictureUrl, stock: item.stock, fireId : item.fireID };
         if (!isInCart(item.id)) {
             cart.push(aux1)
         }

@@ -6,6 +6,7 @@ import { collection, getDocs, query, where } from "@firebase/firestore";
 
 function ItemDetailContainer( ) {
     const [items, setItems] = useState({});
+    const [fireId, setFireId] = useState('')
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -16,7 +17,8 @@ function ItemDetailContainer( ) {
             );
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((document) => {
-                console.log(document.data());
+                console.log(document.data(),  document.id);
+                setFireId(document.id);
                 setItems(document.data());
             });
             setLoading(false);
@@ -28,7 +30,7 @@ function ItemDetailContainer( ) {
     return (
         <React.Fragment>
             {loading && <h3>Cargando</h3>}
-            {!loading && <ItemDetail Data={items} />}
+            {!loading && <ItemDetail Data={items} id={fireId} />}
         </React.Fragment>
     );
 }
