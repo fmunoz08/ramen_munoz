@@ -7,7 +7,7 @@ E-Commerce creado para curso de react en coder house.
 Para levantar este proyecto puede utilizar los siguente parametros
 
 ### `npm i`
-instala dependencias del proyecto
+Instala dependencias del proyecto
 
 ### `npm start`
 
@@ -24,7 +24,7 @@ en  [http://localhost:3000](http://localhost:3000).
 
 ## Librerias utilizadas
  ### Firebase
- para controlar toda la comunicacion con Firebase
+ Para controlar toda la comunicacion con Firebase
  
  ### Moment.js
  Para capturar el tiempo de las transacciones
