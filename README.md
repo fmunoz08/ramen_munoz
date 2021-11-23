@@ -20,7 +20,7 @@ en  [http://localhost:3000](http://localhost:3000).
 Inicia Servicio Mock para request.
 
 ## navegacion 
-![1](https://user-images.githubusercontent.com/74918389/143136913-a3c2555b-0ec6-40f0-b443-a9c6790b64c2.gif)
+![4](https://user-images.githubusercontent.com/74918389/143137267-57633d92-c098-4e86-a65f-d02ec1750e87.gif)
 ![2](https://user-images.githubusercontent.com/74918389/143136944-31ee6fb2-6d29-4ff6-8638-8a4b92414ec3.gif)
 ![3](https://user-images.githubusercontent.com/74918389/143136945-393f185d-0b2b-4cf0-8f12-06b44b2e421d.gif)
 
