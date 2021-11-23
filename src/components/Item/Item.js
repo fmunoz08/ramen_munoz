@@ -2,13 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = styled.div`
-    border: 2px solid black;
+    border: 1px solid black;
     background: white;
     margin: 4px;
     display: flex;
     flex-direction: column;
     width: 250px;
     height: 480px;
+    border-radius: 12px;
+    box-shadow: 0px -4px 8px 0px rgba(52, 69, 89, 0.2);
 `;
 
 const Bar = styled.div`
@@ -17,9 +19,11 @@ const Bar = styled.div`
 `;
 
 const Boton = styled.button`
-    border: 2px solid cyan;
+    border: 1px solid cyan;
     padding: 8px;
     margin: 16px;
+    border-radius: 12px;
+    box-shadow: 0px -4px 8px 0px rgba(52, 69, 89, 0.2);
 `;
 
 const Imagen = styled.img`

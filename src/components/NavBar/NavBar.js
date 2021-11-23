@@ -18,6 +18,7 @@ const LineSeparator = styled.div`
 `;
 
 function NavBar() {
+    // eslint-disable-next-line no-unused-vars
     const [cart, setCart, number, setNumber, addItem, removeItem, clear, isInCart, updateNumber] =
         useContext(CartContext);
 

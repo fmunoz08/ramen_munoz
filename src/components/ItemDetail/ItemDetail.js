@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ import { CartContext } from "../../CartContext";
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+
 `;
 
 const Row = styled.div`
@@ -48,10 +49,10 @@ const LargeBoton = styled.button`
 
 function ItemDetail({ Data, id }) {
   const [show, setShow] = useState(true);
+  // eslint-disable-next-line no-unused-vars
   const [cart,setCart,aux,setNumber, addItem,removeItem,clear,isInCart,updateNumber] =
     useContext(CartContext);
 
-  useEffect(() => {}, [cart]);
 
   function updateCart(number) {
     Data['fireID'] = id;
@@ -74,8 +75,10 @@ function ItemDetail({ Data, id }) {
             <SubTitulo> Valor </SubTitulo>
             <SubTitulo> ${Data.price}</SubTitulo>
           </Row>
+          {Data.stock > 0 &&
 
-          {show && !isInCart(Data.id)  && (
+          <React.Fragment>
+              {show && !isInCart(Data.id)  && (
             <ItemCount
               stock={Data.stock}
               alClick={(number) => updateCart(number)}
@@ -88,6 +91,18 @@ function ItemDetail({ Data, id }) {
               <LargeBoton> Finalizar Compra </LargeBoton>
             </Link>
           }
+            </React.Fragment>
+
+          }
+
+          {
+            Data.stock === 0 &&
+            <React.Fragment>
+              <h1>Producto Agotado</h1>
+              </React.Fragment>
+          }
+
+          
 
           <Bar />
           <SubTitulo>Stock Disponible: {Data.stock}</SubTitulo>

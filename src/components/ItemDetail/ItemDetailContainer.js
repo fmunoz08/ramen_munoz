@@ -17,7 +17,6 @@ function ItemDetailContainer( ) {
             );
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((document) => {
-                console.log(document.data(),  document.id);
                 setFireId(document.id);
                 setItems(document.data());
             });

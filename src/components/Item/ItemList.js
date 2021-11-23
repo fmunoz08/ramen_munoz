@@ -14,14 +14,13 @@ padding: 20px;
 `;
 function ItemList({ Items, addcart }) {
 
-    console.log(Items);
     return (
         <>
             <Wrapper>
                 {
                     Items.map((item, index) =>
                         <Link to={`/item/${item.id}`}>
-                            <Item addcart={addcart} key={index} Data={item} id={index}></Item>
+                            <Item addcart={addcart} key={item.id} Data={item} id={index}></Item>
                         </Link>
                     )
                 }

@@ -12,12 +12,12 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding: 16px;
+
 `;
 
 const Numero = styled.div`
-    border: 1px solid gray;
-    border-radius: 16px;
-    width: 100px;
+    width: 50%;
+    margin: 0 10px;
     text-align: center;
 
 `;
@@ -26,13 +26,17 @@ const Boton = styled.button`
     width: 50px;
     color: blue;
     font-size: 18px;
-
+    border-radius: 12px;
+    border: 1px solid black;
 `;
 
 const LargeBoton = styled.button`
 color: blue;
 font-size: 18px;
 margin: 16px;
+font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid black;
 `;
 
 function ItemCount({ stock, initial, alClick }) {
