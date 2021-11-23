@@ -24,6 +24,20 @@ background: white;
   box-shadow: 0px -4px 8px 0px rgba(52, 69, 89, 0.2);
 `;
 
+const Paragraph = styled.p`
+
+`;
+const SubTitle = styled.h2`
+
+`;
+
+const StyledDiv = styled.div`
+
+`;
+
+const ButtonController = styled.button`
+
+`;
 function Cart() {
     // eslint-disable-next-line no-unused-vars
     const [cart,setCart,aux,setAux,addItem,removeItem,clear,isInCart,updateNumber,replaceItem,] = useContext(CartContext);
@@ -36,7 +50,7 @@ function Cart() {
     return (
         <>
             {cart.length > 0 && (
-                <div style={{ paddingBottom: "30%" }}>
+                <StyledDiv style={{ paddingBottom: "30%" }}>
                     {cart.map((item, index) => {
                         return (
                             <CartItem
@@ -51,12 +65,12 @@ function Cart() {
                     <Background2>
                         <DetailBox>
 
-                            <p > Subtotal: ${totalAmount} clp </p>
-                            <p> Envio: $1000 clp </p>
-                            <p> Total: ${totalAmount + 1000} clp </p>
+                            <Paragraph > Subtotal: ${totalAmount} clp </Paragraph>
+                            <Paragraph> Envio: $1000 clp </Paragraph>
+                            <Paragraph> Total: ${totalAmount + 1000} clp </Paragraph>
 
                             <Link to="/purchase">
-                                <div
+                                <StyledDiv
                                     style={{
                                         border: "solid red 1px",
                                         borderRadius: "24px",
@@ -64,20 +78,20 @@ function Cart() {
                                         color: "#000000"
                                     }}
                                 >
-                                    <p> Ir a pagar</p>
-                                </div>
+                                    <Paragraph> Ir a pagar</Paragraph>
+                                </StyledDiv>
                             </Link>
-                            <p style={{ cursor: "pointer", color: "gray" }} onClick={() => clear()}>Vaciar carrito</p>
+                            <Paragraph style={{ cursor: "pointer", color: "gray" }} onClick={() => clear()}>Vaciar carrito</Paragraph>
 
                         </DetailBox>
                     </Background2>
-                </div>
+                </StyledDiv>
             )}
             {cart.length === 0 && (
                 <React.Fragment>
-                    <h2>Tu carrito esta Vacio :( </h2>
+                    <SubTitle>Tu carrito esta Vacio :( </SubTitle>
                     <Link to="/">
-                        <button>Llevame al Inicio </button>
+                        <ButtonController>Llevame al Inicio </ButtonController>
                     </Link>
                 </React.Fragment>
             )}

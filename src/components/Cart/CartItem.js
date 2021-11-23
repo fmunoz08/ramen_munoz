@@ -38,6 +38,29 @@ const NumberBox = styled.div`
     background: white;
 `;
 
+const ButtonController = styled.button`
+    margin: 0 5px;
+`;
+
+const WrapperContainer = styled.div`
+    margin: 10px;
+    display: flex; 
+    justify-content: center;
+    height: 24px; 
+`;
+
+const Title = styled.h3`
+
+`;
+
+const Paragraph = styled.p`
+
+`;
+
+const WrapperData = styled.div`
+align-self: center; 
+width: 160px;
+`;
 function CartItem({ item, index, actNumber, remItem, rep }) {
 
     const [dato] = useState(item);
@@ -71,19 +94,18 @@ function CartItem({ item, index, actNumber, remItem, rep }) {
             <Background key={index}>
                 <Box>
                     <Imagen src={dato.image} />
-                    <div style={{ alignSelf: "center", width: "160px" }}>
-                        <h3> {dato.name}</h3>
-                        <div style={{ margin: "10px",display: "flex", justifyContent: "center", height: "24px" }}>
-                            <button style={{margin: " 0 5px"}} onClick={() => lessItem()}>-</button>
+                    <WrapperData >
+                        <Title> {dato.name}</Title>
+                        <WrapperContainer >
+                            <ButtonController onClick={() => lessItem()}>-</ButtonController>
                             <NumberBox>{dato.quantity}</NumberBox>
-                            <button style={{margin: " 0 5px"}} onClick={() => moreItem()}>+</button>
-                        </div>
+                            <ButtonController  onClick={() => moreItem()}>+</ButtonController>
+                        </WrapperContainer>
 
                         <DeleteOutlineIcon style={{ cursor: "pointer" }} onClick={() => BorrarItem(item.id)} />
-                    </div>
-
+                    </WrapperData>
                     <DetailBox>
-                    <p> Precio: $ {dato.price} clp</p>
+                    <Paragraph> Precio: $ {dato.price} clp</Paragraph>
                 </DetailBox>
                 </Box>               
             </Background>
@@ -91,6 +113,3 @@ function CartItem({ item, index, actNumber, remItem, rep }) {
     )
 }
 export default CartItem;
-
-
-// ingresa tus datos para continuar tu compra

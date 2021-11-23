@@ -12,6 +12,24 @@ import {
 import { db } from "../../firebaseConfig";
 import moment from "moment";
 import { useForm } from "react-hook-form";
+import styled from "styled-components";
+import "./Purchase.css";
+
+const Title = styled.h1`
+`;
+
+const FormWrapper = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+`;
+
+const FormStyle = styled.form`
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+`;
 
 function Purchase() {
   const [inputs] = useState({});
@@ -89,10 +107,10 @@ function Purchase() {
     <React.Fragment>
       {compraRealizada && (
         <React.Fragment>
-          <h1>Compra exitosa</h1>
-          <h1>
+          <Title>Compra exitosa</Title>
+          <Title>
             Tu codigo de seguimiento -{">"} {boleta}
-          </h1>
+          </Title>
         </React.Fragment>
       )}
 
@@ -100,43 +118,44 @@ function Purchase() {
         <React.Fragment>
           {cart.length !== 0 && (
             <React.Fragment>
-              <h1>Ingresa tus datos para continuar tu compra.</h1>
-              <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                  <input
-                    type="text"
-                    placeholder="First name"
-                    {...register("First name", {
+              <Title>Ingresa tus datos para continuar tu compra.</Title>
+              <FormWrapper >
+                <FormStyle onSubmit={handleSubmit(onSubmit)}>
+
+<div class="form__group field">
+  <input type="text" class="form__field" placeholder="Nombre" {...register("First name", {
                       required: true,
                       maxLength: 80,
-                    })}
-                  />
-                  <input
-                    type="text"
-                    placeholder="Email"
-                    {...register("Email", {
+                    })} required />
+  <label for="Nombre" class="form__label">Nombre</label>
+</div>
+
+                  <div class="form__group field">
+  <input type="text" class="form__field" placeholder="Email" {...register("Email", {
                       required: true,
                       pattern: /^\S+@\S+$/i,
-                    })}
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Mobile number"
-                    {...register("Mobile number", {
+                    })} required />
+  <label for="Email" class="form__label">Email</label>
+</div>
+
+<div class="form__group field">
+  <input type="text" class="form__field" placeholder="Celular" {...register("Mobile number", {
                       required: true,
                       minLength: 6,
                       maxLength: 12,
-                    })}
-                  />
+                    })} required />
+  <label for="Celular" class="form__label">Celular</label>
+</div>
 
-                  <input type="submit" />
-                </form>
-              </div>
+
+                  <input style={{marginTop: "24px", width: "35%"}} type="submit" />
+                </FormStyle>
+              </FormWrapper>
             </React.Fragment>
           )}
           {cart.length === 0 && (
             <React.Fragment>
-              <h1> Tu Carrito esta vacio!!</h1>
+              <Title> Tu Carrito esta vacio!!</Title>
             </React.Fragment>
           )}
         </React.Fragment>
