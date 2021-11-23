@@ -15,9 +15,6 @@ Corre la app de manera local
 en  [http://localhost:3000](http://localhost:3000).
 
 
-### `stubby -s 9000 -d mock/stubbs.yml`
-
-Inicia Servicio Mock para request.
 
 ## navegacion 
 ![4](https://user-images.githubusercontent.com/74918389/143137267-57633d92-c098-4e86-a65f-d02ec1750e87.gif)
@@ -33,7 +30,9 @@ Inicia Servicio Mock para request.
  Para capturar el tiempo de las transacciones
  
  ### React-hook-form
- Controlador de formularios de datos
+ Controlador de formularios de datos. facilicitar la validacion y construccion de formularios.
  
  ### Styled-components
- Libreria para adornar mediante bloques de codigo css en react.
+ Libreria para adornar mediante bloques de codigo css en react. Mejora el manejo de los estilos de la aplicacion.
+ 
+
